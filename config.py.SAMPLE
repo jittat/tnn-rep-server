@@ -1,2 +1,5 @@
 DEBUG = True
+
 SQLALCHEMY_DATABASE_URI = 'mysql://user:password@localhost/tnnrep'
+
+SECRET_KEY = ''

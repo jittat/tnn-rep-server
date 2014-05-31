@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
+<h1>Blocking report</h1>
+
+{% if flashed_messages %}
+  {% for message in flashed_messages %}
+    <div class="alert alert-success">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+
+{% if error_message %}
+   <div class="alert alert-danger">{{ error_message }}</div>   
+{% endif %}
+    
 <form class="form-horizontal" role="form" action="{{ url_for('report') }}" method="post">
 
   <div class="form-group">
@@ -55,10 +67,19 @@
     <div class="form-group">
       <label for="accessing_from"  class="col-sm-2 control-label">Accessing from (optional)</label>
       <div class="col-sm-10">
-        <input name="accessing_from" type="datetime" class="form-control" placeholder="Enter observed location">
+        <input name="accessing_from" type="text" class="form-control" placeholder="Enter observed location">
         <span class="help-block">Please enter the name of the ISP.</span>
       </div>
     </div>
+
+    <div class="form-group">
+      <label for="comments"  class="col-sm-2 control-label">Additional comments (optional)</label>
+      <div class="col-sm-10">
+        <textarea name="comments" class="form-control" rows="2" placeholder="Enter additional comments"></textarea>
+        <span class="help-block">Please provide additional comments here.</span>
+      </div>
+    </div>
+
   </div>
 
   <div class="form-group">
