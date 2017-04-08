@@ -1,0 +1,14 @@
+appdirs
+click
+Flask
+Flask-SQLAlchemy
+itsdangerous
+Jinja2
+MarkupSafe
+MySQL-python
+packaging
+pkg-resources
+pyparsing
+six
+SQLAlchemy
+Werkzeug
